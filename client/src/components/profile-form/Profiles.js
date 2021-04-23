@@ -19,7 +19,7 @@ console.log(profiles);
             <p className="lead">
             <i className="fab fa-connectdevelop"></i> Browse and connect with developers
             </p>
-            <div class="profiles">
+            <div className="profiles">
                 {
                     profiles.length > 0 
                 ? profiles.map(profile =>(

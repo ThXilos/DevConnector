@@ -34,42 +34,42 @@ const AddExperience = ({addExperience, history}) => {
 
     return (
         <Fragment>
-            <h1 class="large text-primary">
+            <h1 Name="large text-primary">
        Add An Experience
       </h1>
-      <p class="lead">
-        <i class="fas fa-code-branch"></i> Add any developer/programming
+      <p className="lead">
+        <i className="fas fa-code-branch"></i> Add any developer/programming
         positions that you have had in the past
       </p>
       <small>* = required field</small>
-      <form class="form" onSubmit={e => {
+      <form className="form" onSubmit={e => {
           e.preventDefault();
           addExperience(formData, history)
       }}>
-        <div class="form-group">
+        <div className="form-group">
           <input type="text" placeholder="* Job Title" name="title" 
           value={title}
           onChange={e => onChange(e)}
           required />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <input type="text" placeholder="* Company" name="company" 
           value={company}
           onChange={e => onChange(e)}
           required />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <input type="text" placeholder="Location" name="location" 
           onChange={e => onChange(e)}
           value={location} />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <h4>From Date</h4>
           <input type="date" name="from" 
           onChange={e => onChange(e)}
           value={from} />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <p><input type="checkbox" 
           name="current" 
           onChange={e => {
@@ -79,14 +79,14 @@ const AddExperience = ({addExperience, history}) => {
           checked={current}
           value={current} />{" "} Current Job</p>
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <h4>To Date</h4>
           <input type="date" name="to" 
           onChange={e => onChange(e)}
           value={to}
           disabled={toDataDisabled ? "disabled":""} />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <textarea
             name="description"
             onChange={e => onChange(e)}
@@ -96,8 +96,8 @@ const AddExperience = ({addExperience, history}) => {
             placeholder="Job Description"
           ></textarea>
         </div>
-        <input type="submit" class="btn btn-primary my-1" />
-        <a class="btn btn-light my-1" href="dashboard.html">Go Back</a>
+        <input type="submit" className="btn btn-primary my-1" />
+        <a className="btn btn-light my-1" href="dashboard.html">Go Back</a>
       </form>
         </Fragment>
         

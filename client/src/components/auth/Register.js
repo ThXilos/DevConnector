@@ -55,7 +55,7 @@ const Register = ({setAlert, register, isAuthenticated}) => {
      <>
       <section className="container">
       <h1 className="large text-primary">Sign Up</h1>
-      <p className="lead"><i class="fas fa-user"></i> Create Your Account</p>
+      <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
       <form className="form" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
           <input 
@@ -73,7 +73,7 @@ const Register = ({setAlert, register, isAuthenticated}) => {
           onChange={ e => onChange(e) }
           name="email" 
            />
-          <small class="form-text">This site uses Gravatar so if you want a profile image, use a
+          <small className="form-text">This site uses Gravatar so if you want a profile image, use a
             Gravatar email</small>
         </div>
         <div className="form-group">

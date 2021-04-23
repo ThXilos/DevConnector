@@ -88,7 +88,7 @@ const EditProfile = ({
         </div>
         <div className="form-group">
           <input type="text" placeholder="Company" name="company" value={company} onChange={e => onChange(e)} />
-          <small class="form-text">Could be your own company or one you work for</small>
+          <small className="form-text">Could be your own company or one you work for</small>
         </div>
         <div className="form-group">
           <input type="text" placeholder="Website" name="website" value={website} onChange={e => onChange(e)} />
@@ -121,7 +121,7 @@ const EditProfile = ({
         </div>
 
         <div className="my-2">
-          <button onClick={ () => toggleSocialInputs(!displaySocialInputs)}type="button" class="btn btn-light">
+          <button onClick={ () => toggleSocialInputs(!displaySocialInputs)}type="button" className="btn btn-light">
             Add Social Network Links
           </button>
           <span>Optional</span>

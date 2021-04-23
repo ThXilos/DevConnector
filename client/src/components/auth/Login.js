@@ -52,7 +52,7 @@ const Login = ({login, isAuthenticated}) => {
      <>
       <section className="container">
       <h1 className="large text-primary">Sign In</h1>
-      <p className="lead"><i class="fas fa-user"></i> Sign in to your account</p>
+      <p className="lead"><i className="fas fa-user"></i> Sign in to your account</p>
       <form className="form" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
           <input type="email" 
@@ -61,7 +61,7 @@ const Login = ({login, isAuthenticated}) => {
           onChange={ e => onChange(e) }
           name="email" 
           required />
-          <small class="form-text">This site uses Gravatar so if you want a profile image, use a
+          <small className="form-text">This site uses Gravatar so if you want a profile image, use a
             Gravatar email</small>
         </div>
         <div className="form-group">
