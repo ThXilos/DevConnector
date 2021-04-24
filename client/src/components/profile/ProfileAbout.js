@@ -11,7 +11,7 @@ const ProfileAbout = ({
 }) => {
     
     return (
-        <div Name="profile-about bg-light p-2">
+        <div className="profile-about bg-light p-2">
         {bio && (<Fragment>
             {/* {name.trim().split(" ")[0]} */}
             <h2 className="text-primary">Quick Bio</h2>

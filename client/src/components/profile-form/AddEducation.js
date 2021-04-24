@@ -84,7 +84,7 @@ const AddEducation = ({addEducation, history}) => {
 
             value={current}
             onChange={e => {
-                onChange(e);
+                setFormData({...formData, current: !current});
                 toggleDisabled(!current);
                 }} /> Current School or Bootcamp
           </p>

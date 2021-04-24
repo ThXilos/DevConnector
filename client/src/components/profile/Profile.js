@@ -7,22 +7,18 @@ import {getProfileById} from "../../actions/profile";
 import ProfileTop from "./ProfileTop";
 import ProfileAbout from "./ProfileAbout";
 import ProfileExperience from "./ProfileExperience";
-const Profile = ({
-    match,
-    getProfileById,
-    profile:{
-      
-        profile, 
-        loading
-    },
-    auth
-}) => {
+import ProfileEducation from "./ProfileEducation";
+import ProfileGithub from "./ProfileGithub";
+const Profile = ({ match, getProfileById, profile:{ profile, loading},auth}) => {
+    
     useEffect(()=>{
         getProfileById(match.params.id);
     },[getProfileById, match.params.id]);
    
-    
-    return (
+return(
+       <div>
+     
+   
         <div>
            <Fragment>
                {profile === null || loading 
@@ -30,34 +26,60 @@ const Profile = ({
                : <Fragment>
                    <Link to="/profiles" className="btn btn-light">
                    Back to Profiles
-                   </Link>
-                   {/*IMPORTANT Check if the user seeing this Profile is owner too. */}
+                   </Link> 
                 {
                 auth.isAuthenticated 
-                && auth.loading === false && auth.user._id === match.params.id
+                && auth.loading === false && auth.user._id === profile.user._id
                 && <Link to="/edit-profile" className="btn btn-dark">
                     Edit Profile
                 </Link>
                 }
-                <div Name="profile-grid my-1">
+                <div className="profile-grid my-1">
                 <ProfileTop profile={profile} />
                 <ProfileAbout profile={profile} />
-                <div>
-                   <h2 className="text-primary">Experience</h2>
-                   {profile.experience.length > 0 
-                   ?(<Fragment>
-                       {profile.experience.map(exp => {
-                        <ProfileExperience key={profile._id} experience={exp} />
-                       })}
-                   </Fragment>)
-                   :<h4>No experience credentials</h4>} 
+              
+                
+                <div className="profile-exp bg-white p-2">
+                <h2 className="text-primary">Experience</h2>
+                {profile.experience.length > 0 
+                ? (<Fragment>
+                    {profile.experience.map(exp =>(
+                    <ProfileExperience 
+                     key={exp._id} 
+                     experience={exp} />))}
+                </Fragment>)
+                :<h1>No Experience added.</h1>}
                 </div>
+
+                <div className="profile-edu bg-white p-2">
+                <h2 className="text-primary">Education</h2>
+                {profile.education.length > 0 
+                ? (<Fragment>
+                    {profile.education.map(edu =>(
+                    <ProfileEducation 
+                     key={edu._id} 
+                     education={edu} />))}
+                </Fragment>)
+                :<h1>No Education added.</h1>}
+                </div>
+
+                <div className="profile-git bg-white p-2">
+                <h2 className="text-primary">Github Repos</h2>
+                <ProfileGithub />
+                </div>
+             
                 </div>
                </Fragment>}
-           </Fragment>
+               </Fragment>
+          
         </div>
+     
+
+       </div> 
     )
-};
+}
+    
+   
 
 Profile.propTypes = {
 getProfileById: PropTypes.func.isRequired,

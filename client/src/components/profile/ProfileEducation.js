@@ -2,34 +2,31 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Moment from "react-moment";
 
-const ProfileExperience = ({experience: {
-    title,company,description,to,current,from}
+const ProfileEducation = ({education: {
+    school,degree,fieldofstudy,current,to,from}
 
 }) => 
     
     
     <Fragment>
           
-          <h3 className="text-dark">{company}</h3>
+          <h3 className="text-dark">{school}</h3>
            <p>
            <Moment format="DD/MM/YYYY">{from}</Moment>{current 
            ? " until today" 
            : <span> to <Moment format="DD/MM/YYYY">{to}</Moment></span>}
            </p>
-            <p><strong>Position: </strong>{title}</p>
+            <p><strong>Degree: </strong>{degree}</p>
             <p>
-              <strong>Description: </strong>{description}
+              <strong>Field of study: </strong>{fieldofstudy}
             </p>
             <div></div>
     </Fragment>
         
-    
-    
 
-
-ProfileExperience.propTypes = {
-experience: PropTypes.object.isRequired
+ProfileEducation.propTypes = {
+education: PropTypes.object.isRequired
 }
 
-export default ProfileExperience
+export default ProfileEducation
 
