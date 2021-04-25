@@ -19,3 +19,5 @@ export const ACCOUNT_DELETED = "ACCOUNT_DELETED";
 export const GET_PROFILES = "GET_PROFILES";
 
 export const GET_REPOS = "GET_REPOS";
+export const GET_POST = "GET_POST";
+export const POST_ERROR = "POST_ERROR";

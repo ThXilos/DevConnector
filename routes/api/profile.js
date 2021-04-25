@@ -350,8 +350,8 @@ router.get("/github/:username", async(req,res)=>{
             `https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc`
           );
           const headers = {
-            "user-agent" : 'node.js',
-            Authorization: `token ${config.get("gitSecret")}}`
+            "User-Agent" : 'node.js',
+            Authorization: `token ${config.get("gitSecret")}`
           };
           
           const gitHubResponse = await axios.get(uri, { headers });

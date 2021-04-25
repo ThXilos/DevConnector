@@ -29,7 +29,7 @@ switch(type){
             return{
                 ...state,
                 profiles: payload,
-                loading: false
+                loading:false
             }
         case PROFILE_ERROR:
             return{

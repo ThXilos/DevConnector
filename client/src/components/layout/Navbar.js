@@ -8,15 +8,20 @@ const Navbar =
 ({auth:{isAuthenticated, loading}, logout}) => {
 const authLinks = (
 <ul>
+<li>
+    <Link to="/dashboard">
+    <i className="fas fa-user"></i>{" "}
+    <span className="hid-sm">Dashboard</span>
+    </Link>
+  </li>
   <li>
     <Link to="/profiles">
     Developers
     </Link>
   </li>
   <li>
-    <Link to="/dashboard">
-    <i className="fas fa-user"></i>{" "}
-    <span className="hid-sm">Dashboard</span>
+    <Link to="/posts">
+    Posts
     </Link>
   </li>
   <li>
