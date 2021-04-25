@@ -8,7 +8,7 @@ const {check, validationResult} = require("express-validator");
 const User = require("../../models/User");
 const Profile = require("../../models/Profile");
 const Post = require("../../models/Post");
-const { request } = require("express");
+
 
 //@route    Get api/Profile/me
 //@desc     Get current users profile
@@ -77,7 +77,7 @@ if (website) profileFields.website = website;
 if (location) profileFields.location = location;
 if (bio) profileFields.bio = bio;
 if (status) profileFields.status = status;
-if (githubusername) profileFields.githubusername = githubusername;
+if (githubusername || githubusername ==="") profileFields.githubusername = githubusername;
 if (skills) {
     //turn comma-seperated in to an array
     profileFields.skills = skills.split(",").map(skill => skill.trim());
@@ -350,8 +350,8 @@ router.get("/github/:username", async(req,res)=>{
             `https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc`
           );
           const headers = {
-            'user-agent': 'node.js',
-            Authorization: `token ${config.get('githubToken')}`
+            "user-agent" : 'node.js',
+            Authorization: `token ${config.get("gitSecret")}}`
           };
           
           const gitHubResponse = await axios.get(uri, { headers });

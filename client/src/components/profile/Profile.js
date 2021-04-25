@@ -62,12 +62,7 @@ return(
                 </Fragment>)
                 :<h1>No Education added.</h1>}
                 </div>
-
-                <div className="profile-git bg-white p-2">
-                <h2 className="text-primary">Github Repos</h2>
-                <ProfileGithub />
-                </div>
-             
+                {profile.githubusername && <ProfileGithub username={profile.githubusername} />}
                 </div>
                </Fragment>}
                </Fragment>
