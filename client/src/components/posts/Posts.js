@@ -12,7 +12,7 @@ const Posts = ({
     useEffect(() => {
         getPosts();
     },[getPosts]);
-    return(
+     return(
         loading 
         ? <Spinner /> 
         :(<Fragment>
@@ -20,10 +20,13 @@ const Posts = ({
            <p className="lead">
                <i className="fas fa-user"></i>Welcome to the community
            </p>
-           {/* PostForm */}
-           <div className="posts">
-               {posts.map(post => (<PostItem />))}
-           </div>
+         <div className="posts">
+         {posts.map(post =>(
+            <PostItem key={post._id} post={post}  />
+         )               
+         )}
+       
+        </div>
         </Fragment>))
 }
 

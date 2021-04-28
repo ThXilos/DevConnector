@@ -1,3 +1,6 @@
+//1rst Add the TYPE of ACTION here (2nd) add the action (3rd) add reducer.
+
+
 export const SET_ALERT = "SET_ALERT";
 export const REMOVE_ALERT = "REMOVE_ALERT";
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
@@ -19,5 +22,9 @@ export const ACCOUNT_DELETED = "ACCOUNT_DELETED";
 export const GET_PROFILES = "GET_PROFILES";
 
 export const GET_REPOS = "GET_REPOS";
-export const GET_POST = "GET_POST";
+export const GET_POSTS = "GET_POSTS";
 export const POST_ERROR = "POST_ERROR";
+
+export const UPDATE_LIKES = "UPDATE_LIKES";
+export const DELETE_POST = "DELETE_POST";
+//example -> ACTION is post.js and REDUCER is post.js
